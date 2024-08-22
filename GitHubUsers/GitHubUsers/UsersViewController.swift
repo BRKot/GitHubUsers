@@ -8,8 +8,10 @@
 import SnapKit
 import UIKit
 
-class ViewController: UIViewController {
+class UsersViewController: UIViewController {
 
+    private var presenter: UsersPresenter?
+    
     private var collectionView: UICollectionView!
 
     override func viewDidLoad() {
@@ -49,9 +51,9 @@ class ViewController: UIViewController {
 
 // MARK: - UICollectionViewDataSource
 
-extension ViewController: UICollectionViewDataSource {
+extension UsersViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20 // Количество ячеек
+        return 10 // Количество ячеек
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,7 +66,7 @@ extension ViewController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension UsersViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // Ширина ячейки с учетом отступов
         let totalSpacing: CGFloat = 10 // Между ячейками в одной строке
